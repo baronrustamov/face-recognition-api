@@ -1,10 +1,11 @@
 import cv2 as cv
+import numpy as np
+
+def turn_gray(colored_image): return cv.cvtColor(colored_image, cv.COLOR_BGR2GRAY)
 
 def detect_faces_in_image(image_path: str) -> None:
     image_color = cv.imread(image_path)
-
-    # The haarcascades can only detect grayscale images
-    image_gray = cv.cvtColor(image_color, cv.COLOR_BGR2GRAY)
+    image_gray = turn_gray(image_color)
     face_cascade = cv.CascadeClassifier('cascades/haarcascade_frontalface_default.xml')
 
     # Returns rectangular coordinates of the detected face based on scaleFactor and minNeighbors
