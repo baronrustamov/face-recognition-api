@@ -1,7 +1,6 @@
 import cv2 as cv
 import numpy as np
-
-def turn_gray(colored_image): return cv.cvtColor(colored_image, cv.COLOR_BGR2GRAY)
+from utils import turn_gray
 
 def detect_faces_in_image(image_path: str) -> None:
     image_color = cv.imread(image_path)
@@ -17,3 +16,6 @@ def detect_faces_in_image(image_path: str) -> None:
 
     cv.imshow('Detected Faces', image_color)
     cv.waitKey(0)
+
+def detect_faces_in_video(video_path: str) -> None:
+    pass # Does nothing for now
