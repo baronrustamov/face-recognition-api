@@ -19,3 +19,23 @@ def detect_faces_in_image(image_path: str) -> None:
 
 def detect_faces_in_video(video_path: str) -> None:
     pass # Does nothing for now
+
+def detect_faces_in_camera(width: int, height: int) -> None:
+    video_cap = cv.VideoCapture(0)
+
+    video_cap.set(3, width)
+    video_cap.set(4, height)
+
+    # Render loop
+    while True:
+        ret, frame = video_cap.read()
+        gray = turn_gray(frame)
+
+        cv.imshow('Color', frame)
+        cv.imshow('Grayscale', gray)
+
+        k = cv.waitKey(30) & 0xff
+        if k == 27: break
+    
+    video_cap.release()
+    cv.destroyAllWindows()
