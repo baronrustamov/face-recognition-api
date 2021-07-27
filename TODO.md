@@ -1,12 +1,9 @@
 # The TODO list for this project
 
-## DONE
-1. Face detection for images
+TODO:
+1. Set up OpenCV with CMake
+2. Add face detection for camera, images, and videos
+3. Add face recognition for camera, images, and videos
 
-## DOING
-1. Face detection for videos
-2. Camera capture
-
-## TO DO
-1. Face recognition for camera, video and images
-2. Add different people for testing the program 
+Doing:
+1. Set up OpenCV with CMake
