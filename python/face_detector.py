@@ -3,7 +3,7 @@ import numpy as np
 
 from utils import turn_gray
 
-FACE_CASCADE = cv.CascadeClassifier('cascades/haarcascade_frontalface_default.xml')
+FACE_CASCADE = cv.CascadeClassifier('../cascades/haarcascade_frontalface_default.xml')
 
 def detect_faces_in_image(image_path: str) -> None:
     '''
