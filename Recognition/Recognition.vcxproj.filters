@@ -18,12 +18,12 @@
     <ClCompile Include="main.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Detector.cc">
+    <ClCompile Include="src\detector.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Detector.hpp">
+    <ClInclude Include="include\detector.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
