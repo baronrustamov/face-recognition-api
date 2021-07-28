@@ -20,6 +20,8 @@ namespace recognition {
   class detector {
     std::string m_ImagePath;
     std::string m_VideoPath;
+
+    const std::string m_FaceCascadePath = "cascades/haarcascade_frontalface_default.xml";
   public:
     detector();
     
