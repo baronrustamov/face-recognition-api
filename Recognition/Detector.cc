@@ -1,15 +1,15 @@
-#include "Detector.hpp"
+#include "detector.hpp"
 
 namespace recognition {
 
-  detector::detector() { }
+  Detector::Detector() { }
 
-  detector::detector(const std::string& image_path, const std::string& video_path) {
+  Detector::Detector(const std::string& image_path, const std::string& video_path) {
     this->m_ImagePath = image_path;
     this->m_VideoPath = video_path;
   }
 
-  void detector::detect_faces_in_image(const std::string& image_path, const std::string& window_name) {
+  void Detector::detectFacesInImage(const std::string& image_path, const std::string& window_name) {
     Mat image = imread(image_path);
 
     // The face cascade holds all information for how to detect the face
@@ -33,7 +33,7 @@ namespace recognition {
     waitKey(0);
   }
 
-  void detector::detect_faces_in_image(const std::string& window_name) {
+  void Detector::detectFacesInImage(const std::string& window_name) {
     Mat image = imread(this->m_ImagePath);
 
     // The face cascade holds all information for how to detect the face

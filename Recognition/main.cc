@@ -1,6 +1,6 @@
-#include "Detector.hpp"
+#include "detector.hpp"
 
 int main() {
-  recognition::detector detector;
-  detector.detect_faces_in_image("res/rdj.jpg", "ee");
+  recognition::Detector detector;
+  detector.detectFacesInImage("res/rdj.jpg", "ee");
 }
