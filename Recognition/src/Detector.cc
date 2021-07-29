@@ -4,7 +4,7 @@ namespace Recognition
 {
     Detector::Detector() { }
 
-    void Detector::DetectFacesInImage(const std::string& imagePath, const std::string& windowName) 
+    void Detector::detectFacesInImage(const std::string& imagePath, const std::string& windowName) 
     {
         Mat image = imread(imagePath);
 

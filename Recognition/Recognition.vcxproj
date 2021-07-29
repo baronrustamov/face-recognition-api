@@ -159,13 +159,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\detector.cc" />
-    <ClCompile Include="main.cc" />
-    <ClCompile Include="src\pch.cc" />
+    <ClCompile Include="src\Detector.cc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\detector.hpp" />
-    <ClInclude Include="include\pch.hpp" />
+    <ClInclude Include="include\Detector.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -26,7 +26,7 @@ namespace Recognition
         /// </summary>
         /// <param name="imagePath">The path to the image.</param>
         /// <param name="windowName">Name of the window.</param>
-        void DetectFacesInImage(const std::string& imagePath, const std::string& windowName);
+        void detectFacesInImage(const std::string& imagePath, const std::string& windowName);
         void DetectFacesInVideo(const std::string& videoPath, const std::string& windowName, int slowMultiplier);
     };
 }
