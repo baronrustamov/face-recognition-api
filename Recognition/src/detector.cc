@@ -1,10 +1,10 @@
-#include "detector.hpp"
+#include "Detector.hpp"
 
-namespace recognition 
+namespace Recognition 
 {
     Detector::Detector() { }
 
-    void Detector::detectFacesInImage(const std::string& imagePath, const std::string& windowName) 
+    void Detector::DetectFacesInImage(const std::string& imagePath, const std::string& windowName) 
     {
         Mat image = imread(imagePath);
 
@@ -21,7 +21,7 @@ namespace recognition
         waitKey(0);
     }
 
-    void Detector::detectFacesInVideo(const std::string& videoPath, const std::string& windowName, int slowMultiplier)
+    void Detector::DetectFacesInVideo(const std::string& videoPath, const std::string& windowName, int slowMultiplier)
     {
         auto videoCapture = VideoCapture(videoPath);
         Mat frame = imread(videoPath);

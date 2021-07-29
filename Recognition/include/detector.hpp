@@ -1,10 +1,16 @@
 #pragma once
 
-#include <pch.hpp>
+#include <iostream>
+#include <vector>
+#include <string>
+
+#include <cstdio>
+
+#include <opencv2/opencv.hpp>
 
 using namespace cv;
 
-namespace recognition 
+namespace Recognition 
 {
     /// <summary>
     /// Face detection class.
@@ -20,8 +26,8 @@ namespace recognition
         /// </summary>
         /// <param name="imagePath">The path to the image.</param>
         /// <param name="windowName">Name of the window.</param>
-        void detectFacesInImage(const std::string& imagePath, const std::string& windowName);
-        void detectFacesInVideo(const std::string& videoPath, const std::string& windowName, int slowMultiplier);
+        void DetectFacesInImage(const std::string& imagePath, const std::string& windowName);
+        void DetectFacesInVideo(const std::string& videoPath, const std::string& windowName, int slowMultiplier);
     };
 }
 
