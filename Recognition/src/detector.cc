@@ -4,34 +4,43 @@ namespace recognition
 {
     Detector::Detector() { }
 
-    void Detector::detectFacesInImage(const std::string& image_path, const std::string& window_name) 
+    void Detector::detectFacesInImage(const std::string& imagePath, const std::string& windowName) 
     {
-        Mat image = imread(image_path);
+        Mat image = imread(imagePath);
 
-        // The face cascade holds all information for how to detect the face
-        CascadeClassifier face_cascade;
-        face_cascade.load(this->m_faceCascadePath);
-    
-        // Not necessary
-        //if (face_cascade.empty()) {
-        //  printf("Cascade file not found.");
-        //}
+        CascadeClassifier faceCascade;
+        faceCascade.load(this->m_faceCascadePath);
 
         std::vector<Rect> faces;
-        face_cascade.detectMultiScale(image, faces, 1.1, 3);
+        faceCascade.detectMultiScale(image, faces, 1.1, 3);
 
         for (int i = 0; i < faces.size(); i++) 
-        {
-            // Draw a rectangle around each face
             rectangle(image, faces[i].tl(), faces[i].br(), Scalar(255, 0, 255), 3);
-        }
 
-        imshow(window_name, image);
+        imshow(windowName, image);
         waitKey(0);
     }
 
-    void Detector::detectFacesInVideo(const std::string& videoPath, const std::string& windowName)
+    void Detector::detectFacesInVideo(const std::string& videoPath, const std::string& windowName, int slowMultiplier)
     {
+        auto videoCapture = VideoCapture(videoPath);
+        Mat frame = imread(videoPath);
 
+        CascadeClassifier faceCascade;
+        faceCascade.load(this->m_faceCascadePath);
+
+        while (true)
+        {
+            videoCapture.read(frame);
+
+            std::vector<Rect> faces;
+            faceCascade.detectMultiScale(frame, faces, 1.1, 3);
+
+            for (int i = 0; i < faces.size(); i++)
+                rectangle(frame, faces[i].tl(), faces[i].br(), Scalar(255, 0, 255), 3);
+
+            imshow(windowName, frame);
+            waitKey(slowMultiplier);
+        }
     }
 }

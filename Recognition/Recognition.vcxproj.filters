@@ -21,9 +21,15 @@
     <ClCompile Include="src\detector.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\pch.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\detector.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pch.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

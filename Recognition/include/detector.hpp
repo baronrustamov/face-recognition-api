@@ -1,16 +1,8 @@
 #pragma once
 
-#include <string>
-#include <vector>
+#include <pch.hpp>
 
-#ifdef __cplusplus
-    #include <opencv2/opencv.hpp>
-    #include <cstdio>
-
-    using namespace cv;
-#else
-    #error C++ only
-#endif
+using namespace cv;
 
 namespace recognition 
 {
@@ -29,13 +21,7 @@ namespace recognition
         /// <param name="imagePath">The path to the image.</param>
         /// <param name="windowName">Name of the window.</param>
         void detectFacesInImage(const std::string& imagePath, const std::string& windowName);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="videoPath"></param>
-        /// <param name="windowName"></param>
-        void detectFacesInVideo(const std::string& videoPath, const std::string& windowName);
+        void detectFacesInVideo(const std::string& videoPath, const std::string& windowName, int slowMultiplier);
     };
 }
 
